@@ -134,8 +134,8 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 -- Utilisateurs (IMPORTANT: utilisez setup-db.js pour les bons mots de passe hashés)
 INSERT INTO `users` (`email`, `password`, `nom`, `prenom`, `role`) VALUES
-('admin@gymnova.com', '$2a$10$rPiVOlL7qLy8jfR5Kz5yxOPFBFz9p5vQjSzLcXGqT1ZE5U5GXHS5K', 'Admin', 'Gymnova', 'admin'),
-('user@test.com', '$2a$10$rPiVOlL7qLy8jfR5Kz5yxOPFBFz9p5vQjSzLcXGqT1ZE5U5GXHS5K', 'Test', 'User', 'client');
+('admin@gymnova.com', '$2a$10$TeSGn0LiIvUPkQVwcYPU9uL290vvxO2iqyMfK5z6HTaE9.WwFTcS.', 'Admin', 'Gymnova', 'admin'),
+('user@test.com', '$2a$10$DP.KlhTACalsvwQwRu8ir.RRNaDh2hi/GsEbuV8Bb8NryhTIJk7rq', 'Test', 'User', 'client');
 
 -- Categories avec images placeholder
 INSERT INTO `categories` (`nom`, `description`, `image_url`) VALUES
