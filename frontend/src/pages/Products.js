@@ -12,38 +12,36 @@ const Products = () => {
     const searchQuery = searchParams.get('search') || '';
 
     useEffect(() => {
+        const fetchCategories = async () => {
+            try {
+                const response = await api.get('/categories');
+                setCategories(response.data || []);
+            } catch (error) {
+                console.error('Error loading categories:', error);
+            }
+        };
         fetchCategories();
     }, []);
 
     useEffect(() => {
+        const fetchProducts = async () => {
+            setLoading(true);
+            try {
+                const params = new URLSearchParams();
+                if (selectedCategory) params.append('category', selectedCategory);
+                if (searchQuery) params.append('search', searchQuery);
+
+                const response = await api.get(`/products?${params.toString()}`);
+                const data = response.data.products || response.data;
+                setProducts(Array.isArray(data) ? data : []);
+            } catch (error) {
+                console.error('Error loading products:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
         fetchProducts();
     }, [selectedCategory, searchQuery]);
-
-    const fetchCategories = async () => {
-        try {
-            const response = await api.get('/categories');
-            setCategories(response.data || []);
-        } catch (error) {
-            console.error('Error loading categories:', error);
-        }
-    };
-
-    const fetchProducts = async () => {
-        setLoading(true);
-        try {
-            const params = new URLSearchParams();
-            if (selectedCategory) params.append('category', selectedCategory);
-            if (searchQuery) params.append('search', searchQuery);
-
-            const response = await api.get(`/products?${params.toString()}`);
-            const data = response.data.products || response.data;
-            setProducts(Array.isArray(data) ? data : []);
-        } catch (error) {
-            console.error('Error loading products:', error);
-        } finally {
-            setLoading(false);
-        }
-    };
 
     const handleFilterChange = (filterType, value) => {
         const params = new URLSearchParams(searchParams);

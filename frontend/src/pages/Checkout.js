@@ -24,24 +24,23 @@ const Checkout = () => {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        fetchCart();
-    }, []);
-
-    const fetchCart = async () => {
-        try {
-            const response = await api.get('/cart');
-            if (response.data.items.length === 0) {
+        const fetchCart = async () => {
+            try {
+                const response = await api.get('/cart');
+                if (response.data.items.length === 0) {
+                    navigate('/cart');
+                    return;
+                }
+                setCart(response.data);
+            } catch (error) {
+                console.error('Error loading cart:', error);
                 navigate('/cart');
-                return;
+            } finally {
+                setLoading(false);
             }
-            setCart(response.data);
-        } catch (error) {
-            console.error('Error loading cart:', error);
-            navigate('/cart');
-        } finally {
-            setLoading(false);
-        }
-    };
+        };
+        fetchCart();
+    }, [navigate]);
 
     const handleAddressChange = (e) => {
         setAddress({ ...address, [e.target.name]: e.target.value });
