@@ -16,7 +16,7 @@ const Athletes = () => {
         club: 'Konami Sports Club',
         yearsActive: '2006 - 2022',
         coach: 'Takashi Uchimura / Yuji Nishi',
-        image: 'https://i.postimg.cc/T3y1kpSR/kohei-uchimura.jpg',
+        image: 'https://img.kyodonews.net/english/public/images/posts/2a143c5bf9cb7cd53c05a63608f8343a/photo_l.jpg',
         bio: "Kohei Uchimura est consid\u00e9r\u00e9 comme le plus grand gymnaste de tous les temps. Surnomm\u00e9 \u00ab King Kohei \u00bb, il a domin\u00e9 la gymnastique mondiale pendant plus d'une d\u00e9cennie avec une \u00e9l\u00e9gance et une r\u00e9gularit\u00e9 in\u00e9gal\u00e9es. Sa qu\u00eate de la perfection et son d\u00e9vouement absolu au sport incarnent les valeurs d'excellence que Gymnova d\u00e9fend.",
         quote: "La perfection n'existe pas, mais c'est en la poursuivant qu'on atteint l'excellence.",
         palmares: [
