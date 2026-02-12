@@ -151,26 +151,24 @@ async function setupDatabase() {
         `);
         console.log('✅ Categories created (8)');
 
-        // Insert products with placeholder images
+        // Insert products with real images
         await connection.query(`
             INSERT INTO products (nom, description, prix, stock, categorie_id, image_url) VALUES
-            ('Floor Mat 2m x 1m', 'Professional gymnastics mat, 5cm thickness, high-density foam', 149.99, 25, 1, 'https://placehold.co/400x300/e74c3c/ffffff?text=Floor+Mat+2x1m'),
-            ('Folding Mat 3m', 'Foldable mat in 4 sections, ideal for transport', 199.99, 15, 1, 'https://placehold.co/400x300/c0392b/ffffff?text=Folding+Mat+3m'),
-            ('Landing Mat Competition', 'FIG certified landing mat, 20cm foam padding', 599.99, 10, 1, 'https://placehold.co/400x300/e74c3c/ffffff?text=Landing+Mat'),
-            ('Air Track Inflatable 6m', 'Inflatable air track for safe tumbling practice', 699.99, 12, 1, 'https://placehold.co/400x300/c0392b/ffffff?text=Air+Track+6m'),
+            ('Floor Mat 2m x 1m', 'Professional gymnastics mat, 5cm thickness, high-density foam', 149.99, 25, 1, 'https://safetypadding.ie/wp-content/uploads/Sure-Shot-deluxe-Mat.jpg'),
+            ('Landing Mat Competition', 'FIG certified landing mat, 20cm foam padding', 599.99, 10, 1, 'https://www.qdsanhong.com/uploads/202015547/gymnastic-tumbling-crash-mat56326678202.jpg'),
+            ('Air Track Inflatable 6m', 'Inflatable air track for safe tumbling practice', 699.99, 12, 1, 'https://dropsite.com.au/media/catalog/product/cache/1/image/750x/040ec09b1e35df139433887a97daa66f/i/f/ifm-xbo-0601-bu-wt_10.jpg'),
 
-            ('Low Training Beam', 'Low balance beam for beginners, 30cm height', 89.99, 20, 2, 'https://placehold.co/400x300/3498db/ffffff?text=Training+Beam'),
-            ('Competition Beam', 'FIG certified competition beam, adjustable height', 1299.00, 5, 2, 'https://placehold.co/400x300/2980b9/ffffff?text=Competition+Beam'),
-            ('Practice Beam Floor Level', 'Floor-level beam for technique training', 149.99, 18, 2, 'https://placehold.co/400x300/3498db/ffffff?text=Practice+Beam'),
+            ('Low Training Beam', 'Low balance beam for beginners, 30cm height', 89.99, 20, 2, 'https://i.3dmodels.org/uploads/preorder/spieth_gymnastics_training_beam_low_beam_/spieth_gymnastics_training_beam_low_beam__1000_0001.jpg'),
+            ('Competition Beam', 'FIG certified competition beam, adjustable height', 1299.00, 5, 2, 'https://www.spieth-gymnastics.com/thumbnail/1e/de/42/1662981228/ec-munich-2022-07_3840x3840.JPG'),
+            ('Practice Beam Floor Level', 'Floor-level beam for technique training', 149.99, 18, 2, 'https://www.gimtrac.co.za/wp-content/uploads/2021/02/2m-floor-beam-red-side-view-1024x1024.jpg'),
 
-            ('Junior Horizontal Bar', 'Adjustable horizontal bar for children, 1m to 1.5m height', 249.99, 12, 3, 'https://placehold.co/400x300/2ecc71/ffffff?text=Junior+Bar'),
-            ('Professional Uneven Bars', 'Professional uneven bars with cable tensioners', 2499.00, 3, 3, 'https://placehold.co/400x300/27ae60/ffffff?text=Uneven+Bars'),
-            ('Training High Bar', 'Training high bar with adjustable height', 899.99, 8, 3, 'https://placehold.co/400x300/2ecc71/ffffff?text=High+Bar'),
-            ('Parallel Bars Pro', 'FIG certified parallel bars, adjustable height', 3499.00, 4, 3, 'https://placehold.co/400x300/27ae60/ffffff?text=Parallel+Bars'),
+            ('Professional Uneven Bars', 'Professional uneven bars with cable tensioners', 2499.00, 3, 3, 'https://i.postimg.cc/J474tsQr/korean-gymnast-dohyun-eom-seen-in-action-during-the-gymnastics-world-cup-2019-at-the-john-cane-arena.jpg'),
+            ('Training High Bar', 'Training high bar with adjustable height', 899.99, 8, 3, 'https://i.ytimg.com/vi/UosrHeNyAEk/maxresdefault.jpg'),
+            ('Parallel Bars Pro', 'FIG certified parallel bars, adjustable height', 3499.00, 4, 3, 'https://i.postimg.cc/y8vVHLzM/liverpool-uk-9th-april-2016-sam-oldham-parallel-bars-mens-artistic-FX30HJ.jpg'),
 
-            ('Mini Fitness Trampoline', '100cm mini trampoline for fitness and warm-up', 79.99, 30, 4, 'https://placehold.co/400x300/9b59b6/ffffff?text=Mini+Trampoline'),
-            ('Competition Trampoline', '5m x 3m FIG certified competition trampoline', 4999.00, 2, 4, 'https://placehold.co/400x300/8e44ad/ffffff?text=Competition+Trampoline'),
-            ('Double Mini Trampoline', 'Double mini tramp for tumbling training', 1299.99, 6, 4, 'https://placehold.co/400x300/9b59b6/ffffff?text=Double+Mini+Tramp'),
+            ('Mini Fitness Trampoline', '100cm mini trampoline for fitness and warm-up', 79.99, 30, 4, 'https://m.media-amazon.com/images/I/61HlauYP7uL._AC_SL1500_.jpg'),
+            ('Competition Trampoline', '5m x 3m FIG certified competition trampoline', 4999.00, 2, 4, 'https://maxairtrampolines.com/product/7-x-14-folding-competition-trampoline/IMG_1379-copy.jpeg'),
+            ('Double Mini Trampoline', 'Double mini tramp for tumbling training', 1299.99, 6, 4, 'https://www.gymnova.com/media/catalog/product/cache/918ba8e3dfe71395153a3970b4413383/2/3/23200-23201.png'),
 
             ('Pro Wood Rings', 'Premium wooden gymnastics rings with adjustable straps, competition grade', 149.99, 20, 5, 'https://cdn.kingsbox.com/assets/media/products/special-offer/used/X-075-1000-R--gymnastic-wood-rings--0.jpg'),
             ('Olympic Competition Rings', 'Official Olympic-style rings for professional training and competition', 4999.00, 15, 5, 'https://img.olympics.com/images/image/private/t_twitter_share_thumb/f_auto/primary/c8odo4mybjbca1q44jcj'),
@@ -183,14 +181,14 @@ async function setupDatabase() {
             ('Training Vault Table', 'Training vault table for practice', 1499.00, 6, 7, 'https://image.made-in-china.com/2f0j00inkobwNRpBcC/Artistic-Gymnastics-Vault-Table-for-Training.jpg'),
             ('Springboard Competition', 'FIG certified springboard for vault', 599.99, 12, 7, 'https://i.postimg.cc/htmTdWtV/wmremove-transformed.jpg'),
 
-            ('Chalk Powder 500g', 'Pure magnesium carbonate for better grip', 12.99, 100, 8, 'https://placehold.co/400x300/34495e/ffffff?text=Chalk+Powder'),
-            ('Leather Grips', 'Genuine leather grips for bars', 34.99, 50, 8, 'https://placehold.co/400x300/2c3e50/ffffff?text=Leather+Grips'),
-            ('Gymnova Sports Bag', 'Spacious sports bag with compartments', 49.99, 40, 8, 'https://placehold.co/400x300/34495e/ffffff?text=Sports+Bag'),
-            ('Wrist Supports', 'Elastic wrist supports for training', 19.99, 60, 8, 'https://placehold.co/400x300/2c3e50/ffffff?text=Wrist+Supports'),
-            ('Training Leotard', 'Professional training leotard', 59.99, 45, 8, 'https://placehold.co/400x300/34495e/ffffff?text=Training+Leotard'),
-            ('Competition Leotard', 'Team competition leotard with crystals', 189.99, 20, 8, 'https://placehold.co/400x300/2c3e50/ffffff?text=Competition+Leotard')
+            ('Chalk Powder 500g', 'Pure magnesium carbonate for better grip', 12.99, 100, 8, 'https://i.ytimg.com/vi/ijhJVBtTkIE/maxresdefault.jpg'),
+            ('Leather Grips', 'Genuine leather grips for bars', 34.99, 50, 8, 'https://m.media-amazon.com/images/I/61VjLy8nevL.jpg'),
+            ('Gymnova Sports Bag', 'Spacious sports bag with compartments', 49.99, 40, 8, 'https://www.carlasport.ch/19806-large_default/-sac-de-sport-gymnastics-strass.jpg'),
+            ('Wrist Supports', 'Elastic wrist supports for training', 19.99, 60, 8, 'https://contents.mediadecathlon.com/p1661359/k$db21c49ca780fd4c1f2f16353afc1e81/unisex-artistic-gymnastics-wrist-guards.jpg'),
+            ('Training Leotard', 'Professional training leotard', 59.99, 45, 8, 'https://startner.com/1697-large_default/gymnastics-leotard-.jpg'),
+            ('Competition Leotard', 'Team competition leotard with crystals', 189.99, 20, 8, 'https://i.pinimg.com/736x/ae/6c/b5/ae6cb59e0e1a9be226be29273ddbe406.jpg')
         `);
-        console.log('✅ Products created (30)');
+        console.log('✅ Products created (26)');
 
         console.log('\n🎉 Database setup complete!\n');
         console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
